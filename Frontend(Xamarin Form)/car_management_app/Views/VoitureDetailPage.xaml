@@ -1,0 +1,29 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="car_management_app.Views.VoitureDetailPage">
+    <StackLayout Padding="10">
+        <Label Text="Détails de la voiture" FontSize="Large" HorizontalOptions="Center" />
+
+        <!-- Champ Marque -->
+        <Label Text="Marque :" FontAttributes="Bold" />
+        <Entry Text="{Binding Marque}" />
+
+        <!-- Champ Modèle -->
+        <Label Text="Modèle :" FontAttributes="Bold" />
+        <Entry Text="{Binding Modele}" />
+
+        <!-- Champ Année -->
+        <Label Text="Année :" FontAttributes="Bold" />
+        <Entry Text="{Binding Annee}" Keyboard="Numeric" />
+
+        <!-- Champ Prix -->
+        <Label Text="Prix :" FontAttributes="Bold" />
+        <Entry Text="{Binding Prix}" Keyboard="Numeric" />
+
+        <!-- Bouton Modifier -->
+        <Button Text="Modifier" Clicked="OnModifierClicked" />
+
+        <!-- Bouton Supprimer -->
+        <Button Text="Supprimer" TextColor="Red" Clicked="OnSupprimerClicked" />
+    </StackLayout>
+</ContentPage>

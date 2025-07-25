@@ -1,0 +1,29 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="car_management_app.Views.ClientDetailPage">
+    <StackLayout Padding="10">
+        <Label Text="Détails du client" FontSize="Large" HorizontalOptions="Center" />
+
+        <!-- Champ Nom -->
+        <Label Text="Nom :" FontAttributes="Bold" />
+        <Entry Text="{Binding Nom}" />
+
+        <!-- Champ Prénom -->
+        <Label Text="Prénom :" FontAttributes="Bold" />
+        <Entry Text="{Binding Prenom}" />
+
+        <!-- Champ Email -->
+        <Label Text="Email :" FontAttributes="Bold" />
+        <Entry Text="{Binding Email}" Keyboard="Email" />
+
+        <!-- Champ Téléphone -->
+        <Label Text="Téléphone :" FontAttributes="Bold" />
+        <Entry Text="{Binding Telephone}" Keyboard="Telephone" />
+
+        <!-- Bouton Modifier -->
+        <Button Text="Modifier" Command="{Binding ModifierClientCommand}" />
+
+        <!-- Bouton Supprimer -->
+        <Button Text="Supprimer" TextColor="Red" Command="{Binding SupprimerClientCommand}" />
+    </StackLayout>
+</ContentPage>

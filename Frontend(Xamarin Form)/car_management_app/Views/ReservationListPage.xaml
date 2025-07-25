@@ -1,0 +1,34 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:car_management_app.ViewModels"
+             x:Class="car_management_app.Views.ReservationListPage">
+    <ContentPage.BindingContext>
+        <viewModels:ReservationListViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <Label Text="Liste des Réservations" FontSize="Large" HorizontalOptions="Center" />
+
+        <Label Text="Sélectionnez une voiture :" />
+        <Picker ItemsSource="{Binding Voitures}" 
+                ItemDisplayBinding="{Binding Marque}" 
+                SelectedItem="{Binding SelectedVoiture}" 
+                SelectedIndexChanged="OnVoitureSelected" />
+
+        <Label Text="Sélectionnez un client :" />
+        <Picker ItemsSource="{Binding Clients}" 
+                ItemDisplayBinding="{Binding Nom}" 
+                SelectedItem="{Binding SelectedClient}" 
+                SelectedIndexChanged="OnClientSelected" />
+
+        <Button Text="Ajouter une Réservation" Command="{Binding AjouterReservationCommand}" />
+
+        <ListView ItemsSource="{Binding Reservations}" Margin="0,20,0,0" ItemSelected="OnReservationSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding ClientNom}" Detail="{Binding VoitureMarque}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

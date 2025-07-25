@@ -1,0 +1,27 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="car_management_app.Views.AjouterReservationPage"
+             Title="Ajouter une Réservation">
+    <StackLayout Padding="10">
+        <Label Text="Sélectionnez une voiture :" />
+        <Picker ItemsSource="{Binding Voitures}" 
+                ItemDisplayBinding="{Binding Marque}" 
+                SelectedItem="{Binding SelectedVoiture}" />
+
+        <Label Text="Sélectionnez un client :" />
+        <Picker ItemsSource="{Binding Clients}" 
+                ItemDisplayBinding="{Binding Nom}" 
+                SelectedItem="{Binding SelectedClient}" />
+
+        <Label Text="Date de début :" />
+        <DatePicker Date="{Binding DateDebut}"
+                    Format="dd/MM/yyyy" />
+        
+
+        <Label Text="Date de fin :" />
+        <DatePicker Date="{Binding DateFin}" 
+                    Format="dd/MM/yyyy" />
+
+        <Button Text="Ajouter Réservation" Command="{Binding AjouterReservationCommand}" />
+    </StackLayout>
+</ContentPage>

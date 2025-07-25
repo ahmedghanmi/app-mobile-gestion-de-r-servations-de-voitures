@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="car_management_app.Views.AjouterVoiturePage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Ajouter une voiture" FontSize="Large" HorizontalOptions="Center" />
+
+            <Entry Placeholder="Marque" Text="{Binding Marque}" />
+            <Entry Placeholder="Modèle" Text="{Binding Modele}" />
+            <Entry Placeholder="Année" Text="{Binding Annee}" Keyboard="Numeric" />
+            <Entry Placeholder="Prix" Text="{Binding Prix}" Keyboard="Numeric" />
+
+            <Button Text="Ajouter" Command="{Binding AjouterCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

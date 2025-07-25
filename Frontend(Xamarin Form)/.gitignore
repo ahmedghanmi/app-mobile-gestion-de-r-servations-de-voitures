@@ -1,0 +1,9 @@
+# Dossiers à ignorer pour les projets .NET / Xamarin
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userprefs
+*.csproj.user
+*.DS_Store

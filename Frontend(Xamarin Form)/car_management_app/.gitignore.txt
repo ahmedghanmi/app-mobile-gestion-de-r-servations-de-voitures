@@ -1,0 +1,9 @@
+# Ignore les dossiers de build
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userprefs
+*.csproj.user
+*.DS_Store

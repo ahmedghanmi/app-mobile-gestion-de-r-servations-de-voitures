@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="car_management_app.Views.ReservationDetailPage"
+             Title="Détails de la Réservation">
+
+    <StackLayout Padding="10">
+        <Label Text="Modifier les détails de la réservation" FontSize="Large" HorizontalOptions="Center" />
+
+        <!-- Sélection de la voiture -->
+        <Label Text="Voiture" FontSize="Medium" />
+        <Picker Title="Sélectionner une voiture"
+                ItemsSource="{Binding Voitures}"
+                SelectedItem="{Binding SelectedVoiture}"
+                ItemDisplayBinding="{Binding Marque}" />
+
+        <!-- Sélection du client -->
+        <Label Text="Client" FontSize="Medium" />
+        <Picker Title="Sélectionner un client"
+                ItemsSource="{Binding Clients}"
+                SelectedItem="{Binding SelectedClient}"
+                ItemDisplayBinding="{Binding Nom}" />
+
+        <!-- Dates -->
+        <Label Text="Date de début" FontSize="Medium" />
+        <DatePicker Date="{Binding DateDebut}" />
+
+        <Label Text="Date de fin" FontSize="Medium" />
+        <DatePicker Date="{Binding DateFin}" />
+
+        <!-- Boutons -->
+        <Button Text="Enregistrer les modifications" Command="{Binding ModifierReservationCommand}" />
+        <Button Text="Supprimer cette réservation" Command="{Binding SupprimerReservationCommand}" TextColor="Red" />
+    </StackLayout>
+</ContentPage>
