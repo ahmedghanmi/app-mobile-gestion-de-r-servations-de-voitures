@@ -5,13 +5,13 @@ namespace car_management_app.Models
 {
     public class Client
     {
-        [JsonProperty("Id")]
+        [JsonProperty("id")]
         public int Id { get; set; }
 
-        [JsonProperty("Email")]
+        [JsonProperty("email")]
         public string Email { get; set; }
 
-        [JsonProperty("Telephone")]
+        [JsonProperty("telephone")]
         public string Telephone { get; set; }
 
         [JsonProperty("nom")]

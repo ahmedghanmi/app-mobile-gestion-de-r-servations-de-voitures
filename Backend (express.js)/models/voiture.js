@@ -1,10 +1,6 @@
 const db = require('../config/db');
 
 module.exports = {
-    getById: async (id) => {
-        const query = 'SELECT * FROM voitures WHERE id = ?';
-        return db.execute(query, [id]);
-    },
     getAll: () => {
         return db.promise().query('SELECT * FROM voitures');
     },

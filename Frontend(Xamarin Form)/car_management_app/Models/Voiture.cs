@@ -14,10 +14,10 @@ namespace car_management_app.Models
         [JsonProperty("modele")]
         public string Modele { get; set; }
 
-        [JsonProperty("Annee")]
+        [JsonProperty("annee")]
         public int Annee { get; set; }
 
-        [JsonProperty("Prix")]
+        [JsonProperty("prix")]
         public decimal Prix { get; set; }
 
        
