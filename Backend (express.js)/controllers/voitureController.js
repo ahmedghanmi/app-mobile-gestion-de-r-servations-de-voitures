@@ -7,9 +7,25 @@ module.exports = {
             res.json(rows);
         } catch (error) {
             console.error("Erreur détectée :", error);
-            res.status(500).json({ error: "Erreur interne", details: error.message });
+            res.status(500).json({ error: "Erreur interne" });
         }
     },
+    
+    // Récupère une voiture par son ID
+    getById: async (req, res) => {
+        const voitureId = req.params.id;
+        try {
+            const [rows] = await voitureModel.getById(voitureId);
+            if (rows.length === 0) {
+                return res.status(404).json({ error: 'Voiture non trouvée' });
+            }
+            res.json(rows[0]);
+        } catch (error) {
+            console.error("Erreur détectée :", error);
+            res.status(500).json({ error: "Erreur lors de la récupération de la voiture" });
+        }
+    },
+    
     create: async (req, res) => {
         try {
             const voiture = req.body;

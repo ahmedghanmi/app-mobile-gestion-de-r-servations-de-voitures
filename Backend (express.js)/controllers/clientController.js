@@ -8,7 +8,22 @@ module.exports = {
             res.json(rows);
         } catch (error) {
             console.error("Erreur détectée :", error);
-            res.status(500).json({ error: "Erreur interne", details: error.message });
+            res.status(500).json({ error: "Erreur interne" });
+        }
+    },
+
+    // Récupère un client par son ID
+    getById: async (req, res) => {
+        const clientId = req.params.id;
+        try {
+            const [rows] = await clientModel.getById(clientId);
+            if (rows.length === 0) {
+                return res.status(404).json({ error: 'Client non trouvé' });
+            }
+            res.json(rows[0]);
+        } catch (error) {
+            console.error("Erreur détectée :", error);
+            res.status(500).json({ error: "Erreur lors de la récupération du client" });
         }
     },
 

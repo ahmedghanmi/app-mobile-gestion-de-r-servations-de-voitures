@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
 
-public class Reservation
+namespace car_management_app.Models
 {
+    public class Reservation
+    {
     [JsonProperty("reservation_id")]
     public int Id { get; set; }
 
@@ -28,4 +30,5 @@ public class Reservation
 
     [JsonProperty("client_id")]
     public int ClientId { get; set; }
+    }
 }

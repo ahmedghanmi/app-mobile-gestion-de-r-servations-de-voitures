@@ -28,16 +28,6 @@ namespace car_management_app.Views
         // Méthode pour modifier la voiture
         private async void OnModifierClicked(object sender, EventArgs e)
         {
-            var nouvelleMarque = Voiture.Marque;
-            var nouveauModele = Voiture.Modele;
-            var nouvelleAnnee = Voiture.Annee;
-            var nouveauPrix = Voiture.Prix;
-
-            Voiture.Marque = nouvelleMarque;
-            Voiture.Modele = nouveauModele;
-            Voiture.Annee = nouvelleAnnee;
-            Voiture.Prix = nouveauPrix;
-
             var success = await _voitureService.ModifierVoitureAsync(Voiture.Id, Voiture);
 
             if (success)
